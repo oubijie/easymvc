@@ -17,8 +17,14 @@ import com.veryoo.controller.UserController;
 //@WebServlet(value={"/"})
 public class EasyDefaultServlet extends HttpServlet{
 	
-	public static final String CONTROLLER_PACKAGE = "com.veryoo.controller";
+	public static String CONTROLLER_PACKAGE = "";
 	
+	@Override
+	public void init() throws ServletException {
+		//从web.xml读取controller所在的包名
+		CONTROLLER_PACKAGE = this.getInitParameter("CONTROLLER_PACKAGE");
+	}
+
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
