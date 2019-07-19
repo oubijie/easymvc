@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.alibaba.fastjson.JSON;
+import com.veryoo.easymvc.BaseController;
 
 public class DeptController extends BaseController {
 

@@ -1,5 +1,7 @@
 package com.veryoo.controller;
 
+import com.veryoo.easymvc.BaseController;
+
 public class UserController extends BaseController{
 
 	public String execute(){

@@ -1,8 +1,7 @@
 package com.veryoo.controller;
 
-import java.lang.reflect.Method;
+import com.veryoo.easymvc.BaseController;
 
-import javax.servlet.http.HttpServletResponse;
 
 public class HomeController extends BaseController{
 

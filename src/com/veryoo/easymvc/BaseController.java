@@ -1,4 +1,4 @@
-package com.veryoo.controller;
+package com.veryoo.easymvc;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

@@ -1,4 +1,4 @@
-package com.veryoo.servlet;
+package com.veryoo.easymvc;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
