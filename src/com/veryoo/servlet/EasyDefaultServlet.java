@@ -17,6 +17,8 @@ import com.veryoo.controller.UserController;
 @WebServlet(value={"/"})
 public class EasyDefaultServlet extends HttpServlet{
 	
+	public static final String CONTROLLER_PACKAGE = "com.veryoo.controller";
+	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
@@ -79,7 +81,7 @@ public class EasyDefaultServlet extends HttpServlet{
 		}
 		int splitIndex = name.indexOf("/")==-1 ? name.length() : name.indexOf("/");  //找到第二个/的下标
 		name = name.substring(0, 1).toUpperCase() + name.substring(1, splitIndex);
-		name = "com.veryoo.controller." + name + "Controller";  //TODO 包名应从配置获取，或者根据当前servlet的包名获取
+		name = CONTROLLER_PACKAGE + "." + name + "Controller"; //拼出类的全限定名
 		return name;
 	}
 	
