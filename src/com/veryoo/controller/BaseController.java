@@ -31,5 +31,8 @@ public class BaseController {
 		this.session = session;
 	}
 	
+	public void putJson(String json){
+		this.request.setAttribute("json", json);
+	}
 	
 }

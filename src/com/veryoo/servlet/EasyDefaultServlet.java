@@ -57,7 +57,15 @@ public class EasyDefaultServlet extends HttpServlet{
 			result = "/500.jsp";
 		} 
 		
-		req.getRequestDispatcher(result).forward(req, resp);
+		//增加json支持，如果方法返回字符串“json”，则在request中把json内容取出并返回
+		if(result!=null && result.equals("json")){
+			resp.setContentType("application/Json");
+			String json = (String)req.getAttribute("json");
+			resp.getWriter().write(json);
+			resp.getWriter().flush();
+		}else{
+			req.getRequestDispatcher(result).forward(req, resp);
+		}
 	}
 	
 	
