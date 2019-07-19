@@ -36,11 +36,11 @@ public class EasyDefaultServlet extends HttpServlet{
 		
 		try {
 			
-			String uri = req.getRequestURI();
-			controllerName = getControllerName(uri);
-			System.out.println("请求的URL：" + uri);
+			String path = req.getRequestURI().replace(req.getContextPath(), "");
+			controllerName = getControllerName(path);
+			System.out.println("请求的URL：" + path);
 			System.out.println("处理的Controller：" + controllerName);
-			methodName = getMethodName(uri);
+			methodName = getMethodName(path);
 			System.out.println("处理的Method：" + methodName);
 		
 			Class cls = Class.forName(controllerName);
