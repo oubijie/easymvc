@@ -27,15 +27,24 @@ public class EasyDefaultServlet extends HttpServlet{
 		System.out.println("处理的Controller：" + controllerName);
 		
 		try {
-			Class conCls = Class.forName(controllerName);
-			Object con = conCls.newInstance();
-			result = (String)conCls.getMethod("execute").invoke(con);
+			Class cls = Class.forName(controllerName);
+			Object controller = cls.newInstance();
+			//TODO 这里写死了拿父类的setRequest和setResponse方法，所以Controller只能一层继承
+			cls.getSuperclass().getMethod("setRequest", HttpServletRequest.class).invoke(controller, req);
+			cls.getSuperclass().getMethod("setResponse", HttpServletResponse.class).invoke(controller, resp);
+			result = (String)cls.getMethod("execute").invoke(controller);
 		} catch (ClassNotFoundException e) {
 			System.err.println("找不到处理的类：" + controllerName);
+			e.printStackTrace();
+			result = "500.jsp";
 		} catch (InstantiationException | IllegalAccessException e) {
 			System.err.println("实例化类出错：" + controllerName);
+			e.printStackTrace();
+			result = "500.jsp";
 		} catch (IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException e) {
 			System.err.println("执行Controller的execute方法出错：" + controllerName);
+			e.printStackTrace();
+			result = "500.jsp";
 		} 
 		
 //		if(uri.equals("/home")){

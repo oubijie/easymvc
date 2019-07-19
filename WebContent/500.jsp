@@ -3,9 +3,9 @@
 <html>
 <head>
 <meta charset="UTF-8"/>
-<title>首页</title>
+<title>500</title>
 </head>
 <body>
-<h1>欢迎来到首页，${name }</h1>
+<h1>服务器内部出错了！</h1>
 </body>
 </html>
