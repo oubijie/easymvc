@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.veryoo.controller.HomeController;
 import com.veryoo.controller.UserController;
 
-@WebServlet(value={"/"})
+//@WebServlet(value={"/"})
 public class EasyDefaultServlet extends HttpServlet{
 	
 	public static final String CONTROLLER_PACKAGE = "com.veryoo.controller";

@@ -10,4 +10,15 @@
   	<url-pattern>/static/*</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>easy</servlet-name>
+  	<servlet-class>com.veryoo.easymvc.EasyDefaultServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>easy</servlet-name>
+  	<url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+  
+  
 </web-app>
